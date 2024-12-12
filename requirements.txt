@@ -24,3 +24,4 @@ six==1.16.0
 soupsieve==2.6
 threadpoolctl==3.5.0
 urllib3==2.2.3
+xgboost==1.5.0
