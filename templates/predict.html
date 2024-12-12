@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Injection Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        {% if prediction == "Negative" %}
+            <h1>THE GIVEN QUERY BELONGS TO CLASS 1 MEANS THIS IS A SQL INJECTION QUERY</h1>
+            <p>Your IP Address: {{ client_ip }}</p>
+            <p>Location: {{ location }}</p>
+            <p>Timestamp: {{ timestamp }}</p>
+        {% else %}
+            <h1>THE GIVEN QUERY BELONGS TO CLASS 0 MEANS THIS IS NOT A SQL INJECTION QUERY</h1>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan Results</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <!-- Scanning message initially visible -->
+    <div id="scanning-message" class="scanning-message">
+        <h1>Scanning...</h1>
+    </div>
+
+    <!-- Results container, initially hidden -->
+    <div id="result-container" class="container hidden">
+        <h1>SQL Injection Vulnerability Scan Results</h1>
+        <div class="logs">
+            <h2>Logs</h2>
+            <ul>
+                {% for log in logs %}
+                    <li>{{ log }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="form-list">
+            <h2>Forms Found</h2>
+            <ul>
+                {% for form in form_list %}
+                    <li>
+                        <strong>Action:</strong> {{ form.action }}<br>
+                        <strong>Method:</strong> {{ form.method }}<br>
+                        <strong>Inputs:</strong>
+                        <ul>
+                            {% for input in form.inputs %}
+                                <li>{{ input.name }} - {{ input.type }} (Value: {{ input.value }})</li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="vulnerability">
+            <h2>Vulnerability Status</h2>
+            <p><strong>SQL Injection Detected:</strong> {{ 'Yes' if sqli_detected[0] == 'True' else 'No' }}</p>
+            <p><strong>Database Type:</strong> {{ db[0] if db else 'Unknown' }}</p>
+            <p><strong>Risk Level:</strong> {{ risk_state[0] if risk_state else 'Unknown' }}</p>
+        </div>
+    </div>
+
+    <!-- JavaScript to handle the scanning message and results display -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                // Hide the "Scanning..." message and show results
+                document.getElementById("scanning-message").style.display = "none";
+                document.getElementById("result-container").classList.remove("hidden");
+                document.getElementById("result-container").classList.add("fade-in");
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

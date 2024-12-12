@@ -1,0 +1,189 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: #00ff00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 16px;
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    padding: 30px; /* Increased padding */
+    border: 2px solid #00ff00;
+    border-radius: 8px;
+    background-color: #121212;
+    box-shadow: 0px 0px 20px #00ff00;
+    text-align: left;
+    overflow-y: auto; /* Ensure scroll if content overflows */
+    max-height: 90vh; /* Prevents content from extending out of viewport */
+}
+
+/* Headings */
+h1, h2 {
+    color: #00ff00;
+    text-shadow: 0px 0px 10px #00ff00;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    padding-bottom: 10px; /* Add padding to separate from content below */
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    padding-bottom: 5px; /* Separate from content below */
+}
+
+/* Links as buttons */
+.link-btn {
+    display: inline-block;
+    color: #1a1a1a;
+    background-color: #00ff00;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 0px 10px #00ff00, 0px 0px 20px #00ff00 inset;
+}
+
+.link-btn:hover {
+    background-color: #1a1a1a;
+    color: #00ff00;
+    box-shadow: 0px 0px 15px #00ff00;
+    text-shadow: 0px 0px 5px #00ff00;
+}
+
+/* Button styling */
+button {
+    padding: 10px 20px;
+    border: 1px solid #00ff00;
+    background-color: transparent;
+    color: #00ff00;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+    background-color: #00ff00;
+    color: #1a1a1a;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #00ff00;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+    color: #00ff00;
+}
+
+/* Logs and Lists */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    color: #00ff00;
+}
+
+ul li {
+    margin: 10px 0;
+    text-shadow: 0px 0px 5px #00ff00;
+}
+
+.logs, .form-list, .vulnerability {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #00ff00;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+    box-shadow: 0px 0px 10px #00ff00;
+}
+
+.logs h2, .form-list h2, .vulnerability h2 {
+    margin-bottom: 10px;
+    padding-bottom: 5px; /* Adds spacing before lists */
+}
+
+.vulnerability p {
+    margin: 10px 0;
+    font-size: 1rem;
+    text-shadow: 0px 0px 3px #00ff00;
+}
+
+p {
+    color: #00ff00;
+    font-size: 1rem;
+}
+
+/* Links */
+a {
+    color: #00ff00;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #1aff1a;
+}
+
+/* Scanning message styling */
+.scanning-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #00ff00;
+    font-size: 2rem;
+    text-shadow: 0px 0px 10px #00ff00;
+    background-color: #1a1a1a;
+}
+
+/* Hidden class to keep the element hidden initially */
+.hidden {
+    display: none;
+}
+
+/* Fade-in effect */
+.fade-in {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Injection Protection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to SQL Injection and XSS Protection System</h1>
+        <form action="/honeyPot" method="get">
+            <button type="submit" class="link-btn">Honeypot</button>
+        </form>
+        <form action="/sqli" method="get">
+            <button type="submit" class="link-btn">SQL Injection Detection</button>
+        </form>
+        <form action="/attack_log" method="get">
+            <button type="submit" class="link-btn">View Attack Log</button>
+        </form>
+
+        <!-- XSS Scan Button -->
+        <form action="/xss" method="get">
+            <button type="submit" class="link-btn">XSS Scan</button>
+        </form>
+    </div>
+</body>
+</html>

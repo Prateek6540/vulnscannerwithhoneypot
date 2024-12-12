@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>SQL INJECTION DETECTION USING MACHINE LEARNING</h1>
+
+        <!-- Updated form with a text input field -->
+        <form action="/predict" method="POST" target="_blank">
+            <label for="query">Enter the SQL Query to scan:</label>
+            <input type="text" id="query" name="query" placeholder="Enter SQL query here..." required>
+            <button type="submit">Submit</button>
+        </form>
+
+    </div>
+</body>
+</html>
